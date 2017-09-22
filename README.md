@@ -22,6 +22,41 @@ It is licensed under [MIT](https://opensource.org/licenses/MIT).
 
 5.Check "Import as general project" and select "finish"  
 
+### Servlet
+
+```java
+public class MyAppServlet extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		resp.setContentType("text/html; charset=UTF-8");
+		// Get credential including access_token
+		GoogleCredential credential = OAuthSession.getInstance().createCredential(req);
+		// Get unique userId
+		String userId = OAuthSession.getInstance().getUserId(req);
+
+		Oauth2 oauth2 = new Oauth2.Builder(
+				new com.google.api.client.http.javanet.NetHttpTransport(),
+				new com.google.api.client.json.jackson2.JacksonFactory(),
+				credential).build();
+
+		// Get userInfo using credential
+		Userinfoplus userInfo = oauth2.userinfo().get().execute();
+		final PrintWriter out = resp.getWriter();
+		// Show result
+		out.println("<html><body>You are already logged in to Google.");
+		out.println("<br>");
+		out.println("<b>OAuth2/OpenId connect result</b><br>");
+		out.println("userId=" + userId);
+		out.println("userInfo=" + userInfo);
+
+		out.close();
+
+	}
+
+}
+```
 
 ### Run example
 
