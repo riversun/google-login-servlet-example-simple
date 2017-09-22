@@ -67,3 +67,24 @@ public class MyAppServlet extends HttpServlet {
 1. run **com.example.google_login.MyAppMain**
 
 <img src="https://riversun.github.io/img/goauth2/lib_oauth2_example01.png">  
+
+
+# More practical examples
+
+In the above example you know authentication/authorization and application login are inseparable.
+
+To create a practical web application,  
+It is necessary to separate application level login and OAuth2-flow.  
+And it is necessary to design separately the part of authentication "who are you?"  
+and the part of authorization to grant permission (to the API).
+
+## download / clone
+I would like to introduce an example of separating app login and OAuth.You can clone and easy to run it.
+
+https://github.com/riversun/google-login-servlet-example-on-jetty.git
+
+# Helper Library for OAuth2 servlet
+
+https://github.com/riversun/google-oauth2-client-servlet
+
+
