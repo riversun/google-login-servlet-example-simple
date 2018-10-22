@@ -5,7 +5,7 @@
 
 	<groupId>com.example</groupId>
 	<artifactId>google-login-servlet-example-simple-on-jetty</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 	<packaging>jar</packaging>
 	<name>google-login-servlet-on-jetty-simple</name>
 	<description>Simple example of login with Google (OAuth2 / OpenId connect) on jetty.
@@ -18,18 +18,16 @@
 
 	<dependencies>
 
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-server</artifactId>
-			<version>9.4.4.v20170414</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-webapp</artifactId>
-			<version>9.4.4.v20170414</version>
-		</dependency>
-
+	<dependency>
+		<groupId>org.eclipse.jetty</groupId>
+		<artifactId>jetty-server</artifactId>
+		<version>9.4.12.v20180830</version>
+	</dependency>
+	<dependency>
+		<groupId>org.eclipse.jetty</groupId>
+		<artifactId>jetty-webapp</artifactId>
+		<version>9.4.12.v20180830</version>
+	</dependency>
 		<dependency>
 			<groupId>org.riversun</groupId>
 			<artifactId>google-oauth2-client-servlet</artifactId>
